@@ -35,18 +35,7 @@
       import React, { Component } from 'react';
 
       const styleSheet = (theme) => ({
-        [theme.breakpoints.up('sm')]: {
 
-        },
-        [theme.breakpoints.up('md')]: {
-
-        },
-        [theme.breakpoints.up('lg')]: {
-
-        },
-        [theme.breakpoints.up('xl')]: {
-
-        }
       });
 
       type Props = {
@@ -89,18 +78,7 @@
       import { bindActionCreators } from 'redux';
 
       const styleSheet = (theme) => ({
-        [theme.breakpoints.up('sm')]: {
 
-        },
-        [theme.breakpoints.up('md')]: {
-
-        },
-        [theme.breakpoints.up('lg')]: {
-
-        },
-        [theme.breakpoints.up('xl')]: {
-
-        }
       });
 
       type OwnProps = {
