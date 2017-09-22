@@ -1,0 +1,153 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+'.source.js':
+  'Mocha Test':
+    'prefix': 'it'
+    'body': """
+      it('${1:Should}', function() {
+
+      });
+    """
+  'React Component':
+    'prefix': 'react'
+    'body': """
+      // @flow
+      import { withStyles } from 'material-ui/styles';
+      import React, { Component } from 'react';
+
+      const styleSheet = (theme) => ({
+        [theme.breakpoints.up('sm')]: {
+
+        },
+        [theme.breakpoints.up('md')]: {
+
+        },
+        [theme.breakpoints.up('lg')]: {
+
+        },
+        [theme.breakpoints.up('xl')]: {
+
+        }
+      });
+
+      type Props = {
+        classes: {[string]: string}
+      }
+
+      type State = {};
+
+      class ${1:ComponentName} extends Component<void, Props, State> {
+        //https://github.com/facebook/flow/issues/1594
+        state: State;
+
+        constructor(props: Props) {
+          super(props);
+          this.state = {};
+        }
+
+        render() {
+          const {
+            classes
+          } = this.props;
+          return (
+            <div>
+
+            </div>
+          );
+        }
+      }
+
+      export default withStyles(styleSheet)(${1:ComponentName});
+    """
+  'Redux Container':
+    'prefix': 'redux'
+    'body': """
+      // @flow
+      import { withStyles } from 'material-ui/styles';
+      import React, { Component } from 'react';
+      import { connect } from 'react-redux';
+      import type { Connector } from 'react-redux';
+      import { bindActionCreators } from 'redux';
+
+      const styleSheet = (theme) => ({
+        [theme.breakpoints.up('sm')]: {
+
+        },
+        [theme.breakpoints.up('md')]: {
+
+        },
+        [theme.breakpoints.up('lg')]: {
+
+        },
+        [theme.breakpoints.up('xl')]: {
+
+        }
+      });
+
+      type OwnProps = {
+        classes: {[string]: string}
+      };
+
+      type Props = {
+
+      } & OwnProps;
+
+      type State = {};
+
+      class ${1:ComponentName} extends Component<void, Props, State> {
+        //https://github.com/facebook/flow/issues/1594
+        state: State;
+
+        constructor(props: Props) {
+          super(props);
+          this.state = {};
+        }
+
+        render() {
+          const {
+            classes
+          } = this.props;
+          return (
+            <div>
+
+            </div>
+          );
+        }
+      }
+
+      const mapStateToProps = (state: any, ownProps: OwnProps) => {
+        return {
+          classes: ownProps.classes
+        };
+      };
+
+      const mapDispatchToActions = (dispatch: any, ownProps: OwnProps) => {
+        return bindActionCreators({
+
+        }, dispatch);
+      };
+
+      const connector: Connector<OwnProps, Props> = connect(mapStateToProps, mapDispatchToActions);
+
+      export default withStyles(styleSheet)(connector(${1:ComponentName}));
+    """
+
