@@ -34,7 +34,7 @@
       import { withStyles } from 'material-ui/styles';
       import React, { Component } from 'react';
 
-      const styleSheet = (theme) => ({
+      const styleSheet = theme => ({
 
       });
 
@@ -44,10 +44,7 @@
 
       type State = {};
 
-      class ${1:ComponentName} extends Component<void, Props, State> {
-        //https://github.com/facebook/flow/issues/1594
-        state: State;
-
+      class ${1:ComponentName} extends Component<Props, State> {
         constructor(props: Props) {
           super(props);
           this.state = {};
@@ -81,20 +78,13 @@
 
       });
 
-      type OwnProps = {
+      type Props = {
         classes: {[string]: string}
       };
 
-      type Props = {
-
-      } & OwnProps;
-
       type State = {};
 
-      class ${1:ComponentName} extends Component<void, Props, State> {
-        //https://github.com/facebook/flow/issues/1594
-        state: State;
-
+      class ${1:ComponentName} extends Component<Props, State> {
         constructor(props: Props) {
           super(props);
           this.state = {};
@@ -112,20 +102,18 @@
         }
       }
 
-      const mapStateToProps = (state: any, ownProps: OwnProps) => {
+      const mapStateToProps = (state: any, ownProps: any) => {
         return {
-          classes: ownProps.classes
+
         };
       };
 
-      const mapDispatchToActions = (dispatch: any, ownProps: OwnProps) => {
+      const mapDispatchToActions = (dispatch: any, ownProps: any) => {
         return bindActionCreators({
 
         }, dispatch);
       };
 
-      const connector: Connector<OwnProps, Props> = connect(mapStateToProps, mapDispatchToActions);
-
-      export default withStyles(styleSheet)(connector(${1:ComponentName}));
+      export default connect(mapStateToProps, mapDispatchToActions)(withStyles(styleSheet)(${1:ComponentName}));
     """
 
