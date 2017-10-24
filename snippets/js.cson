@@ -42,16 +42,19 @@
         classes: {[string]: string}
       }
 
-      type State = {};
+      type State = {
+
+      };
 
       class ${1:ComponentName} extends React.Component<void, Props, State> {
-        //https://github.com/facebook/flow/issues/1594
-        state: State;
+      constructor(props: Props) {
+        super(props);
+        this.state = {
 
-        constructor(props: Props) {
-          super(props);
-          this.state = {};
-        }
+        };
+      }
+      // https://github.com/facebook/flow/issues/1594
+      state: State;
 
         render() {
           const {
@@ -74,7 +77,6 @@
       import { withStyles } from 'material-ui/styles';
       import React from 'react';
       import { connect } from 'react-redux';
-      import { bindActionCreators } from 'redux';
 
       const styleSheet = (theme) => ({
 
@@ -84,16 +86,19 @@
         classes: {[string]: string}
       };
 
-      type State = {};
+      type State = {
+
+      };
 
       class ${1:ComponentName} extends React.Component<void, Props, State> {
-        //https://github.com/facebook/flow/issues/1594
-        state: State;
-
         constructor(props: Props) {
           super(props);
-          this.state = {};
+          this.state = {
+
+          };
         }
+        // https://github.com/facebook/flow/issues/1594
+        state: State;
 
         render() {
           const {
@@ -107,18 +112,15 @@
         }
       }
 
-      const mapStateToProps = (state: any, ownProps: any) => {
+      const mapStateToProps = (state: any) => {
         return {
 
         };
       };
 
-      const mapDispatchToActions = (dispatch: any, ownProps: any) => {
-        return bindActionCreators({
+      const mapDispatchToActions = {
 
-        }, dispatch);
       };
 
       export default connect(mapStateToProps, mapDispatchToActions)(withStyles(styleSheet)(${1:ComponentName}));
     """
-
