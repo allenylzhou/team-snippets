@@ -47,14 +47,14 @@
       };
 
       class ${1:ComponentName} extends React.Component<void, Props, State> {
-      constructor(props: Props) {
-        super(props);
-        this.state = {
+        constructor(props: Props) {
+          super(props);
+          this.state = {
 
-        };
-      }
-      // https://github.com/facebook/flow/issues/1594
-      state: State;
+          };
+        }
+        // https://github.com/facebook/flow/issues/1594
+        state: State;
 
         render() {
           const {
